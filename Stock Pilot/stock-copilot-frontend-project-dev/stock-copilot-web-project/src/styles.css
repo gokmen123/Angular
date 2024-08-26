@@ -1,0 +1,152 @@
+/* Renkler */
+:root {
+    --background-color: #F4F4F4;
+    --text-color: #666666;
+    --black-color: #000000;
+    --white-color: #FFFFFF;
+    --link-color: #4C6DCE;
+    --primary-color: #00AF90;
+    --notification-color: #CF3A3A;
+    --border-color: #000000;
+    --secondary-border-color: #00AF90;
+  }
+  html, body {
+    width: 100%;
+    overflow-x: hidden; /* Yatay kaydırmayı engeller */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .content {
+    margin-left: 170px; /* Sidebar genişliğini ayarlar */
+    padding-top: 64px; /* Header'ın yüksekliğini ayarlar */
+    min-height: calc(100vh - 100px); /* 100px yerine header ve footer yüksekliği */
+  }
+  
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--black-color);
+  }
+  
+  a {
+    color: var(--link-color);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Kutular */
+  .box {
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+  }
+  
+  .box.primary {
+    border-color: var(--secondary-border-color);
+  }
+  
+  /* Butonlar */
+  .button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: darken(var(--primary-color), 10%);
+  }
+  
+  .button.secondary {
+    background-color: var(--notification-color);
+  }
+  
+  .button.secondary:hover {
+    background-color: darken(var(--notification-color), 10%);
+  }
+  
+  /* Input Alanları */
+  input[type="text"], input[type="password"], input[type="email"] {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+body,html,app-root,app-login-page,supplier-page{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+body,html,app-root,supplier-page {
+  background-color: #F4F4F4;
+}
+app-root {
+    display: flex;
+    flex-direction: column;
+    
+}
+app-login-page {
+    position: relative;
+    overflow: hidden; /* Ensure the pseudo-element stays within the bounds */
+    background-color: #00000c;
+}
+
+app-login-page::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.25), transparent 80%);
+    pointer-events: none; 
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.all-center{
+    align-items: center;
+    justify-content: center;
+}
+.full-page{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+html, body { height: 100%; }
+
+.js-center{
+  justify-content: center;
+}
+.al-center{
+  align-items: center;
+}

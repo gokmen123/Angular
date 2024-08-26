@@ -1,0 +1,18 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.dashboard .card {
+  background-color: var(--white-color);
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+}
+
+.dashboard .card.primary {
+  border-color: var(--secondary-border-color);
+}

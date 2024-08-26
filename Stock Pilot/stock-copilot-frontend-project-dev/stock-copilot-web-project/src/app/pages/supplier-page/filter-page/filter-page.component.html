@@ -1,0 +1,42 @@
+<div id="filterModal" class="modal">
+    <div class="modal-content">
+        <span (click)="closeModal()" class="close-btn">&times;</span>
+        <h2 class="row all-center">Filtrele</h2>
+        <div class="modal-header">
+            <div class="filter-options">
+                <h3>Tablo Görünümü</h3>
+                <ul>
+                  <li *ngFor="let item of ['Ad', 'Ülke', 'Adres', 'Mail', 'Telefon', 'Fax', 'Vergi No', 'Mersis No', 'Açıklama']"
+                      (click)="toggleActive(item)"
+                      [class.active]="isActive(item)">
+                    {{ item }}
+                  </li>
+                </ul>
+            </div>
+            <div class="filter-criteria">
+                <div class="row all-center header-title">
+                    <p>Tablo Görünümü</p>
+                </div>
+                <div class="row al-center filter-header-inputs ">
+                    <input type="checkbox" (change)="toggleAll($event)"> All select
+                    <input class="search" type="text" placeholder="Ara ...">
+                </div>
+                <div class="filter-list">
+                    <label *ngFor="let option of filterOptions">
+                        <input type="checkbox" [(ngModel)]="option.selected" (change)="updateSelectAllState()"> {{ option.label }}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer al-center">
+           <div class="row child-one equal">
+                <p> <span style="color:red"> *</span> Seçtiğiniz kriterler <span style="color:red"> kırmızı</span> renkte gösterilmiştir.</p>
+           </div>
+           <div class="row child-two equal">
+                <button class="btn-clear">Tüm Filtreleri Temizle</button>
+                <button class="btn-cancel">İptal</button>
+                <button class="btn-apply">Uygula</button>
+           </div>
+        </div>
+    </div>
+</div>

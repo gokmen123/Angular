@@ -1,0 +1,31 @@
+<div class="row full-page">
+    <div class="section-one row">
+        <h1 class="vertical-text">POWERED BY EMA</h1>
+    </div>
+    <div class="circular-image"></div>
+    <div class="column section-two">
+        <div class="section-three">
+            <div class="column equal">
+                <h1 class="title">STOK PİLOT</h1>
+            </div>
+            <div class="column inputs">
+                <input placeholder="User Name" [(ngModel)]="authModel.mail" class="input-field" />
+                <div class="password-container">
+                    <input placeholder="Password" [(ngModel)]="authModel.password" [type]="hide ? 'password' : 'text'" class="input-field" />
+
+                    <span (click)="toggleVisibility()">
+                        <i class="fa" [ngClass]="{'fa-eye-slash': hide, 'fa-eye': !hide}"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="row equal footer">
+                <div class="column equal footer-part-one full-page">
+                    <p><a href="https://example.com" class="link">forget your password?</a></p>
+                </div>
+                <div class="column equal full-page">
+                    <button (click)="login()" class="login-button">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

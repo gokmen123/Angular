@@ -1,0 +1,64 @@
+<div class="column main">
+    <div class="header row">
+        <div class="left">
+            <div class="dropdown">
+                <button class="dropdown-btn" (click)="toggleDropdown()">{{ selectedOption }}</button>
+                <div class="dropdown-content" [class.show]="isDropdownOpen">
+                  <a href="#" (click)="selectOption('Çöp kutusuna taşı')">Çöp kutusuna taşı</a>
+                  <a href="#" (click)="selectOption('Toplu düzenle')">Toplu düzenle</a>
+                </div>
+              </div>
+            <button class="second-button">Uygula</button>
+        </div>
+        <div class="title row">
+            <h1 class="main-title">Tedarikçi</h1>
+        </div>
+        <div class="right row">
+            <button> Tedarikçi ekle</button>
+            <button (click)="toggleFilterPage()" class="button-with-text">
+                <img  src="https://img.icons8.com/?size=100&id=3004&format=png&color=000000" alt="Icon"> <!-- İkon resmi -->
+                Filter 
+            </button>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="middle-child">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="df-2"><input type="checkbox" />All select</th>
+                        <th>id</th>
+                        <th>Firma</th>
+                        <th>Ulke</th>
+                        <th>Tel</th>
+                        <th>Mail</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let supplier of suppliers">
+                        <td><input type="checkbox" /></td>
+                        <td>{{ supplier.id }}</td>
+                        <td>{{ supplier.name }}</td>
+                        <td>{{ supplier.country }}</td>
+                        <td>{{ supplier.phone }}</td>
+                        <td>{{ supplier.email }}</td>
+                        <td>
+                          <button (click)="deleteById(supplier.id)"class="custom-button">
+                            Detay <span class="icon">⋮</span>
+                          </button>
+                        </td>
+                      </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer row">
+        
+    </div>
+    <div *ngIf="isFilterPageVisible">
+        <filter-page (close)="toggleFilterPage()"></filter-page>
+    </div>
+</div>
